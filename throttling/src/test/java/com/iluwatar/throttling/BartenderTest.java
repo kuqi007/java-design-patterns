@@ -30,17 +30,16 @@ import com.iluwatar.throttling.timer.Throttler;
 import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 
-/**
- * B2BServiceTest class to test the B2BService
- */
-public class BartenderTest {
+/** B2BServiceTest class to test the B2BService */
+class BartenderTest {
 
   private final CallsCount callsCount = new CallsCount();
 
   @Test
   void dummyCustomerApiTest() {
     var tenant = new BarCustomer("pirate", 2, callsCount);
-    // In order to assure that throttling limits will not be reset, we use an empty throttling implementation
+    // In order to assure that throttling limits will not be reset, we use an empty throttling
+    // implementation
     var timer = (Throttler) () -> {};
     var service = new Bartender(timer, callsCount);
 

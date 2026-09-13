@@ -29,12 +29,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Date: 12/12/15 - 10:11 PM
- *
- * @author Jeroen Meulemeester
- */
-public class ContentTest {
+/** ContentTest */
+class ContentTest {
 
   @Test
   void testToString() {
@@ -44,5 +40,4 @@ public class ContentTest {
       assertFalse(toString.trim().isEmpty());
     }
   }
-
 }

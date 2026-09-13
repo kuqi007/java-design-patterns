@@ -29,18 +29,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit tests for RangeShardManager class.
- */
+/** Unit tests for RangeShardManager class. */
 class RangeShardManagerTest {
 
   private RangeShardManager rangeShardManager;
 
-  /**
-   * Initialize rangeShardManager instance.
-   */
+  /** Initialize rangeShardManager instance. */
   @BeforeEach
-  public void setup() {
+  void setup() {
     rangeShardManager = new RangeShardManager();
     var shard1 = new Shard(1);
     var shard2 = new Shard(2);
@@ -56,5 +52,4 @@ class RangeShardManagerTest {
     rangeShardManager.storeData(data);
     assertEquals(data, rangeShardManager.getShardById(1).getDataById(1));
   }
-
 }

@@ -24,22 +24,18 @@
  */
 package com.iluwatar.caching;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-/**
- * Application test
- */
+/** Application test */
 class CachingTest {
   private App app;
 
-  /**
-   * Setup of application test includes: initializing DB connection and cache size/capacity.
-   */
+  /** Setup of application test includes: initializing DB connection and cache size/capacity. */
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     // VirtualDB (instead of MongoDB) was used in running the JUnit tests
     // to avoid Maven compilation errors. Set flag to true to run the
     // tests with MongoDB (provided that MongoDB is installed and socket
@@ -68,6 +64,6 @@ class CachingTest {
   @Test
   void testCacheAsideStrategy() {
     assertNotNull(app);
-    app.useCacheAsideStategy();
+    app.useCacheAsideStrategy();
   }
 }

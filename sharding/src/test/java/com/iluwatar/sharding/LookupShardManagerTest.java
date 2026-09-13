@@ -31,18 +31,14 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit tests for LookupShardManager class.
- */
+/** Unit tests for LookupShardManager class. */
 class LookupShardManagerTest {
 
   private LookupShardManager lookupShardManager;
 
-  /**
-   * Initialize lookupShardManager instance.
-   */
+  /** Initialize lookupShardManager instance. */
   @BeforeEach
-  public void setup() {
+  void setup() {
     lookupShardManager = new LookupShardManager();
     var shard1 = new Shard(1);
     var shard2 = new Shard(2);

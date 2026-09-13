@@ -24,19 +24,16 @@
  */
 package com.iluwatar.model.view.controller;
 
-/**
- * Fatigue enumeration.
- */
+import lombok.AllArgsConstructor;
+
+/** Fatigue enumeration. */
+@AllArgsConstructor
 public enum Fatigue {
   ALERT("alert"),
   TIRED("tired"),
   SLEEPING("sleeping");
 
   private final String title;
-
-  Fatigue(String title) {
-    this.title = title;
-  }
 
   @Override
   public String toString() {

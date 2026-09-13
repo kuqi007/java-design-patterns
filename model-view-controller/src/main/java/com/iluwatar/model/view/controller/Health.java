@@ -24,19 +24,16 @@
  */
 package com.iluwatar.model.view.controller;
 
-/**
- * Health enumeration.
- */
+import lombok.AllArgsConstructor;
+
+/** Health enumeration. */
+@AllArgsConstructor
 public enum Health {
   HEALTHY("healthy"),
   WOUNDED("wounded"),
   DEAD("dead");
 
   private final String title;
-
-  Health(String title) {
-    this.title = title;
-  }
 
   @Override
   public String toString() {

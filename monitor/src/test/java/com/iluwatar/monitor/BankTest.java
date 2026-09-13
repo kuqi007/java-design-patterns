@@ -24,13 +24,14 @@
  */
 package com.iluwatar.monitor;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.*;
 
-public class BankTest {
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+class BankTest {
 
   private static final int ACCOUNT_NUM = 4;
   private static final int BASE_AMOUNT = 1000;
@@ -68,5 +69,12 @@ public class BankTest {
   @Test
   void BalanceHaveToBeOK() {
     assertEquals(4000, bank.getBalance());
+  }
+
+  @Test
+  void ReturnBalanceWhenGivenAccountNumber() {
+    bank.transfer(0, 1, 1000);
+    assertEquals(0, bank.getBalance(0));
+    assertEquals(2000, bank.getBalance(1));
   }
 }

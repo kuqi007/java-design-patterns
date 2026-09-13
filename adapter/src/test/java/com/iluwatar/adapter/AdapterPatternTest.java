@@ -24,18 +24,15 @@
  */
 package com.iluwatar.adapter;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 
-/**
- * Tests for the adapter pattern.
- */
+import java.util.HashMap;
+import java.util.Map;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+/** Tests for the adapter pattern. */
 class AdapterPatternTest {
 
   private Map<String, Object> beans;
@@ -44,11 +41,9 @@ class AdapterPatternTest {
 
   private static final String ROWING_BEAN = "captain";
 
-  /**
-   * This method runs before the test execution and sets the bean objects in the beans Map.
-   */
+  /** This method runs before the test execution and sets the bean objects in the beans Map. */
   @BeforeEach
-  public void setup() {
+  void setup() {
     beans = new HashMap<>();
 
     var fishingBoatAdapter = spy(new FishingBoatAdapter());

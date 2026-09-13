@@ -28,12 +28,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Date: 12/21/15 - 12:12 PM
- *
- * @author Jeroen Meulemeester
- */
-public class FileLoaderTest {
+/** FileLoaderTest */
+class FileLoaderTest {
 
   @Test
   void testLoadData() {
@@ -41,5 +37,4 @@ public class FileLoaderTest {
     fileLoader.setFileName("non-existing-file");
     assertNull(fileLoader.loadData());
   }
-
 }

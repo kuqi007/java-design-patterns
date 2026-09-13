@@ -35,12 +35,12 @@ class GameControllerTest {
   private GameController controller;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     controller = new GameController();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     controller = null;
   }
 
@@ -54,5 +54,4 @@ class GameControllerTest {
   void testGetBulletPosition() {
     assertEquals(controller.bullet.getPosition(), controller.getBulletPosition(), 0);
   }
-
 }

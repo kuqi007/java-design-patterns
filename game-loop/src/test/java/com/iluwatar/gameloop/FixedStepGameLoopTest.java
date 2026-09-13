@@ -26,24 +26,22 @@ package com.iluwatar.gameloop;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-/**
- * FixedStepGameLoop unit test class.
- */
-public class FixedStepGameLoopTest {
+/** FixedStepGameLoop unit test class. */
+class FixedStepGameLoopTest {
 
   private FixedStepGameLoop gameLoop;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     gameLoop = new FixedStepGameLoop();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     gameLoop = null;
   }
 
@@ -52,5 +50,4 @@ public class FixedStepGameLoopTest {
     gameLoop.update();
     assertEquals(0.01f, gameLoop.controller.getBulletPosition(), 0);
   }
-
 }

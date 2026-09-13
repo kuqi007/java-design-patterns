@@ -34,10 +34,8 @@ import com.iluwatar.leaderelection.MessageType;
 import java.util.Queue;
 import org.junit.jupiter.api.Test;
 
-/**
- * RingInstance unit test.
- */
-public class RingInstanceTest {
+/** RingInstance unit test. */
+class RingInstanceTest {
 
   @Test
   void testOnMessage() {

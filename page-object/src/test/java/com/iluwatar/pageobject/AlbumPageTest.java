@@ -26,36 +26,34 @@ package com.iluwatar.pageobject;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.gargoylesoftware.htmlunit.WebClient;
 import com.iluwatar.pageobject.pages.AlbumPage;
+import org.htmlunit.WebClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Test Album Page Operations
- */
-public class AlbumPageTest {
+/** Test Album Page Operations */
+class AlbumPageTest {
 
   private final AlbumPage albumPage = new AlbumPage(new WebClient());
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     albumPage.navigateToPage();
   }
 
   @Test
   void testSaveAlbum() {
 
-    var albumPageAfterChanges = albumPage
-        .changeAlbumTitle("25")
-        .changeArtist("Adele Laurie Blue Adkins")
-        .changeAlbumYear(2015)
-        .changeAlbumRating("B")
-        .changeNumberOfSongs(20)
-        .saveChanges();
+    var albumPageAfterChanges =
+        albumPage
+            .changeAlbumTitle("25")
+            .changeArtist("Adele Laurie Blue Adkins")
+            .changeAlbumYear(2015)
+            .changeAlbumRating("B")
+            .changeNumberOfSongs(20)
+            .saveChanges();
 
     assertTrue(albumPageAfterChanges.isAt());
-
   }
 
   @Test
@@ -64,5 +62,4 @@ public class AlbumPageTest {
     albumListPage.navigateToPage();
     assertTrue(albumListPage.isAt());
   }
-
 }

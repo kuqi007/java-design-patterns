@@ -34,10 +34,8 @@ import com.iluwatar.leaderelection.MessageType;
 import java.util.Queue;
 import org.junit.jupiter.api.Test;
 
-/**
- * BullyInstance unit test.
- */
-public class BullyinstanceTest {
+/** BullyInstance unit test. */
+class BullyinstanceTest {
 
   @Test
   void testOnMessage() {
@@ -52,7 +50,6 @@ public class BullyinstanceTest {
     } catch (IllegalAccessException | NoSuchFieldException e) {
       fail("fail to access messasge queue.");
     }
-
   }
 
   @Test
@@ -75,5 +72,4 @@ public class BullyinstanceTest {
     bullyInstance.setAlive(false);
     assertFalse(bullyInstance.isAlive());
   }
-
 }

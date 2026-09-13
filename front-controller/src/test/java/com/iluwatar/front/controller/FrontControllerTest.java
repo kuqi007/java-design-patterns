@@ -33,44 +33,38 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-/**
- * Date: 12/13/15 - 1:39 PM
- *
- * @author Jeroen Meulemeester
- */
-public class FrontControllerTest {
+/** FrontControllerTest */
+class FrontControllerTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
   static List<Object[]> dataProvider() {
     return List.of(
-        new Object[]{new ArcherCommand(), "Displaying archers"},
-        new Object[]{new CatapultCommand(), "Displaying catapults"},
-        new Object[]{new UnknownCommand(), "Error 500"}
-    );
+        new Object[] {new ArcherCommand(), "Displaying archers"},
+        new Object[] {new CatapultCommand(), "Displaying catapults"},
+        new Object[] {new UnknownCommand(), "Error 500"});
   }
 
   /**
-   * @param command        The command that's been tested
+   * @param command The command that's been tested
    * @param displayMessage The expected display message
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testDisplay(Command command, String displayMessage) {
+  void testDisplay(Command command, String displayMessage) {
     assertEquals(0, appender.getLogSize());
     command.process();
     assertEquals(displayMessage, appender.getLastMessage());
     assertEquals(1, appender.getLogSize());
   }
-
 }

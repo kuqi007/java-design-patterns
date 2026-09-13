@@ -37,22 +37,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
-/**
- * Date: 12/20/15 - 2:04 PM
- *
- * @author Jeroen Meulemeester
- */
-public class GiantViewTest {
+/** GiantViewTest */
+class GiantViewTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender(GiantView.class);
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -71,9 +67,7 @@ public class GiantViewTest {
     assertEquals(1, appender.getLogSize());
   }
 
-  /**
-   * Logging Appender Implementation
-   */
+  /** Logging Appender Implementation */
   public static class InMemoryAppender extends AppenderBase<ILoggingEvent> {
     private final List<ILoggingEvent> log = new LinkedList<>();
 

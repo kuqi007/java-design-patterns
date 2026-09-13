@@ -27,12 +27,8 @@ package com.iluwatar.interpreter;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
-/**
- * Date: 12/14/15 - 12:08 PM
- *
- * @author Jeroen Meulemeester
- */
-public class PlusExpressionTest extends ExpressionTest<PlusExpression> {
+/** PlusExpressionTest */
+class PlusExpressionTest extends ExpressionTest<PlusExpression> {
 
   /**
    * Create a new set of test entries with the expected result
@@ -44,11 +40,8 @@ public class PlusExpressionTest extends ExpressionTest<PlusExpression> {
     return prepareParameters(Integer::sum);
   }
 
-  /**
-   * Create a new test instance using the given test parameters and expected result
-   */
+  /** Create a new test instance using the given test parameters and expected result */
   public PlusExpressionTest() {
     super("+", PlusExpression::new);
   }
-
 }

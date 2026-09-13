@@ -33,10 +33,8 @@ import com.iluwatar.objectmother.Queen;
 import com.iluwatar.objectmother.RoyaltyObjectMother;
 import org.junit.jupiter.api.Test;
 
-/**
- * Test Generation of Royalty Types using the object-mother
- */
-public class RoyaltyObjectMotherTest {
+/** Test Generation of Royalty Types using the object-mother */
+class RoyaltyObjectMotherTest {
 
   @Test
   void unsuccessfulKingFlirt() {

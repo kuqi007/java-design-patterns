@@ -24,72 +24,78 @@
  */
 package com.iluwatar.compositeview;
 
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
 import jakarta.servlet.http.HttpServletRequest;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
-import static org.junit.Assert.*;
+class JavaBeansTest {
 
-public class JavaBeansTest {
-    @Test
-    public void testDefaultConstructor() {
-        ClientPropertiesBean newBean = new ClientPropertiesBean();
-        assertEquals("DEFAULT_NAME", newBean.getName());
-        assertTrue(newBean.isBusinessInterest());
-        assertTrue(newBean.isScienceNewsInterest());
-        assertTrue(newBean.isSportsInterest());
-        assertTrue(newBean.isWorldNewsInterest());
+  @Test
+  void testDefaultConstructor() {
+    ClientPropertiesBean newBean = new ClientPropertiesBean();
+    assertEquals("DEFAULT_NAME", newBean.getName());
+    assertTrue(newBean.isBusinessInterest());
+    assertTrue(newBean.isScienceNewsInterest());
+    assertTrue(newBean.isSportsInterest());
+    assertTrue(newBean.isWorldNewsInterest());
+  }
 
-    }
+  @Test
+  void testNameGetterSetter() {
+    ClientPropertiesBean newBean = new ClientPropertiesBean();
+    assertEquals("DEFAULT_NAME", newBean.getName());
 
-    @Test
-    public void testNameGetterSetter() {
-        ClientPropertiesBean newBean = new ClientPropertiesBean();
-        assertEquals("DEFAULT_NAME", newBean.getName());
-        newBean.setName("TEST_NAME_ONE");
-        assertEquals("TEST_NAME_ONE", newBean.getName());
-    }
+    newBean.setName("TEST_NAME_ONE");
+    assertEquals("TEST_NAME_ONE", newBean.getName());
+  }
 
-    @Test
-    public void testBusinessSetterGetter() {
-        ClientPropertiesBean newBean = new ClientPropertiesBean();
-        assertTrue(newBean.isBusinessInterest());
-        newBean.setBusinessInterest(false);
-        assertFalse(newBean.isBusinessInterest());
-    }
+  @Test
+  void testBusinessSetterGetter() {
+    ClientPropertiesBean newBean = new ClientPropertiesBean();
+    assertTrue(newBean.isBusinessInterest());
 
-    @Test
-    public void testScienceSetterGetter() {
-        ClientPropertiesBean newBean = new ClientPropertiesBean();
-        assertTrue(newBean.isScienceNewsInterest());
-        newBean.setScienceNewsInterest(false);
-        assertFalse(newBean.isScienceNewsInterest());
-    }
+    newBean.setBusinessInterest(false);
+    assertFalse(newBean.isBusinessInterest());
+  }
 
-    @Test
-    public void testSportsSetterGetter() {
-        ClientPropertiesBean newBean = new ClientPropertiesBean();
-        assertTrue(newBean.isSportsInterest());
-        newBean.setSportsInterest(false);
-        assertFalse(newBean.isSportsInterest());
-    }
+  @Test
+  void testScienceSetterGetter() {
+    ClientPropertiesBean newBean = new ClientPropertiesBean();
+    assertTrue(newBean.isScienceNewsInterest());
 
-    @Test
-    public void testWorldSetterGetter() {
-        ClientPropertiesBean newBean = new ClientPropertiesBean();
-        assertTrue(newBean.isWorldNewsInterest());
-        newBean.setWorldNewsInterest(false);
-        assertFalse(newBean.isWorldNewsInterest());
-    }
+    newBean.setScienceNewsInterest(false);
+    assertFalse(newBean.isScienceNewsInterest());
+  }
 
-    @Test
-    public void testRequestConstructor(){
-        HttpServletRequest mockReq = Mockito.mock(HttpServletRequest.class);
-        ClientPropertiesBean newBean = new ClientPropertiesBean((mockReq));
-        assertEquals("DEFAULT_NAME", newBean.getName());
-        assertFalse(newBean.isWorldNewsInterest());
-        assertFalse(newBean.isBusinessInterest());
-        assertFalse(newBean.isScienceNewsInterest());
-        assertFalse(newBean.isSportsInterest());
-    }
+  @Test
+  void testSportsSetterGetter() {
+    ClientPropertiesBean newBean = new ClientPropertiesBean();
+    assertTrue(newBean.isSportsInterest());
+
+    newBean.setSportsInterest(false);
+    assertFalse(newBean.isSportsInterest());
+  }
+
+  @Test
+  void testWorldSetterGetter() {
+    ClientPropertiesBean newBean = new ClientPropertiesBean();
+    assertTrue(newBean.isWorldNewsInterest());
+
+    newBean.setWorldNewsInterest(false);
+    assertFalse(newBean.isWorldNewsInterest());
+  }
+
+  @Test
+  void testRequestConstructor() {
+    HttpServletRequest mockReq = mock(HttpServletRequest.class);
+    ClientPropertiesBean newBean = new ClientPropertiesBean(mockReq);
+
+    assertEquals("DEFAULT_NAME", newBean.getName());
+    assertFalse(newBean.isWorldNewsInterest());
+    assertFalse(newBean.isBusinessInterest());
+    assertFalse(newBean.isScienceNewsInterest());
+    assertFalse(newBean.isSportsInterest());
+  }
 }

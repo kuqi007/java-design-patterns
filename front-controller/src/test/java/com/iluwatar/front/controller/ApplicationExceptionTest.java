@@ -28,17 +28,12 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Date: 12/13/15 - 1:35 PM
- *
- * @author Jeroen Meulemeester
- */
-public class ApplicationExceptionTest {
+/** ApplicationExceptionTest */
+class ApplicationExceptionTest {
 
   @Test
   void testCause() {
     final var cause = new Exception();
     assertSame(cause, new ApplicationException(cause).getCause());
   }
-
 }

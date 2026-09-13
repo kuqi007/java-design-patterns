@@ -24,14 +24,8 @@
  */
 package com.iluwatar.lazy.loading;
 
-import java.lang.reflect.Field;
-
-/**
- * Date: 12/19/15 - 12:19 PM
- *
- * @author Jeroen Meulemeester
- */
-public class HolderThreadSafeTest extends AbstractHolderTest {
+/** HolderThreadSafeTest */
+class HolderThreadSafeTest extends AbstractHolderTest {
 
   private final HolderThreadSafe holder = new HolderThreadSafe();
 
@@ -43,8 +37,7 @@ public class HolderThreadSafeTest extends AbstractHolderTest {
   }
 
   @Override
-  Heavy getHeavy() throws Exception {
+  Heavy getHeavy() {
     return this.holder.getHeavy();
   }
-
 }

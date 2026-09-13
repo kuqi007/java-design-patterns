@@ -33,44 +33,38 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-/**
- * Date: 12/13/15 - 1:39 PM
- *
- * @author Jeroen Meulemeester
- */
-public class ViewTest {
+/** ViewTest */
+class ViewTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
   static List<Object[]> dataProvider() {
     return List.of(
-        new Object[]{new ArcherView(), "Displaying archers"},
-        new Object[]{new CatapultView(), "Displaying catapults"},
-        new Object[]{new ErrorView(), "Error 500"}
-    );
+        new Object[] {new ArcherView(), "Displaying archers"},
+        new Object[] {new CatapultView(), "Displaying catapults"},
+        new Object[] {new ErrorView(), "Error 500"});
   }
 
   /**
-   * @param view           The view that's been tested
+   * @param view The view that's been tested
    * @param displayMessage The expected display message
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testDisplay(View view, String displayMessage) {
+  void testDisplay(View view, String displayMessage) {
     assertEquals(0, appender.getLogSize());
     view.display();
     assertEquals(displayMessage, appender.getLastMessage());
     assertEquals(1, appender.getLogSize());
   }
-
 }

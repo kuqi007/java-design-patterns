@@ -28,12 +28,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Date: 12/13/15 - 2:57 PM
- *
- * @author Jeroen Meulemeester
- */
-public class OrderTest {
+/** OrderTest */
+class OrderTest {
 
   private static final String EXPECTED_VALUE = "test";
 
@@ -71,5 +67,4 @@ public class OrderTest {
     order.setOrderItem(EXPECTED_VALUE);
     assertEquals(EXPECTED_VALUE, order.getOrderItem());
   }
-
 }
